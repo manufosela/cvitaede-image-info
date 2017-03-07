@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>cvitaede-image-info demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../cvitaede-image-info.html">
+    <link rel="import" href="../bower_components/cvitaede-cloudcircles/cvitaede-cloudcircles.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles"></style>
+    <style>
+      demo-snippet { width:600px; }
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic cvitaede-image-info Demo</h3>
+      <demo-snippet>
+        <template>
+          <cvitaede-image-info>
+            <main-skill name="Cloud Name 1" value="200" bg="#EFDA4E"></main-skill>
+            <main-skill name="Cloud Name 2" value="150" bg="#F06529"></main-skill>
+            <main-skill name="Cloud Name 3" value="100" bg="#879F4C"></main-skill>
+
+            <personal-info level="main">Main Personal Text</personal-info>
+            <personal-info>Other personal info</personal-info>
+            <personal-info>Other personal info</personal-info>
+          </cvitaede-image-info>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>
