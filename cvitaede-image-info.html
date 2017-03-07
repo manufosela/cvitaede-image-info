@@ -3,6 +3,10 @@
     <style>
      :host {
         display: block;
+        --subtitle-color: #000;
+        --subtitle-font-size: 1.17em;
+        --subtitle-font-family: Verdana, Arial;
+        --imgcont-border:3px solid #F00;
       }
     
      :host .container {
@@ -10,6 +14,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+
+      :host .container h3 {
+        color: var(--subtitle-color);
+        font-size: var(--subtitle-font-size);
+        font-family: var(--subtitle-font-family)
       }
     
      :host .imgcont {
@@ -21,7 +31,7 @@
         max-height: 400px;
         min-height: 200px;
         border-radius: 50%;
-        border: 3px solid #F00;
+        border: var(--imgcont-border);
         overflow: hidden;
       }
     
