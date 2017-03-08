@@ -51,10 +51,30 @@
         background:transparent; 
         padding:1%;
         width:30%;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(0); 
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(0); 
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(0);
+        transition: all 200ms ease-in;
+        transform: scale(0);
+      }
+
+      :host #cloud.show {
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(1); 
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1); 
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1);
+        transition: all 200ms ease-in;
+        transform: scale(1);
+        text-align: center;
       }
       :host #info {
         position:absolute; 
-        top:3%; left:60%; 
+        top:20%; left:70%; 
         background:#EEE; 
         padding:1%;
         max-width:30%;
@@ -87,13 +107,30 @@
         font-size:1.6rem;
         font-weight:bold;
       }
+      :host button {
+        position: relative;
+        border: 0;
+        background: transparent;
+      }
+      :host button.showcloud {
+        top: 2rem;
+        left: 30%;
+        z-index: 10;
+      }
+      :host button.showinfo {
+        left: 60%;
+        top: 2rem;
+        z-index: 10;
+      }
     </style>
+    <button on-tap="toggleCloud" type="button" class="showcloud">+</button>
+    <button on-tap="toggleInfo" type="button" class="showinfo">O</button>
     <div id="cloud">
       <cvitaede-cloudcircles id="mainSkills"></cvitaede-cloudcircles>
     </div>
     <div id="info"></div>
     <div class="container">
-      <div class="imgcont" style$="width:{{size}}px; height:{{size}}px" on-tap="toggleInfo">
+      <div class="imgcont" style$="width:{{size}}px; height:{{size}}px">
         <img src="{{picture}}" width="{{size}}" />
       </div>
       <h2>{{title}}</h2>
@@ -157,8 +194,15 @@
       } else {
         el.classList.remove('show');
       }
+    },
+    toggleCloud: function() {
+      var el = this.querySelector('#cloud');
+      if (!el.classList.toString().match('show')) {
+        el.classList.add('show');
+      } else {
+        el.classList.remove('show');
+      }
     }
-
   });
 
   </script>
